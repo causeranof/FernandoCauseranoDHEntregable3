@@ -1,0 +1,34 @@
+{
+  "artists": [
+    {
+      "artistId": "1",
+      "name": "Andy",
+      "nationality": "Argantine",
+      "Influenced_by": "Keith Haring, The Polac"
+    },
+    {
+      "artistId": "2",
+      "name": "Michelangelo",
+      "nationality": "Italy",
+      "Influenced_by": "Lorenzo Medici"
+    },
+    {
+      "artistId": "3",
+      "name": "keith Haring",
+      "nationality": "United States",
+      "Influenced_by": "Jean Dubuffet, Pierre Alechinsky, William Burroughs"
+    },
+    {
+      "artistId": "4",
+      "name": "Miro",
+      "nationality": "Spain",
+      "Influenced_by": "Picasso"
+    },
+    {
+      "artistId": "5",
+      "name": "Polac (El Polaco)",
+      "nationality": "United States",
+      "Influenced_by": "Miro, Picasso"
+    }
+  ]
+}

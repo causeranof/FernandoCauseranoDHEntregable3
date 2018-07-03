@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "187172587526",
+    "firebase_url": "https://fernandocauseranodhentregable3.firebaseio.com",
+    "project_id": "fernandocauseranodhentregable3",
+    "storage_bucket": "fernandocauseranodhentregable3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187172587526:android:fe77bb383fa12a3a",
+        "android_client_info": {
+          "package_name": "com.example.fcauserano.fernandocauseranodhentregable3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187172587526-gm0p0rpmdr8f508jf4lnup17o2uvu42o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fcauserano.fernandocauseranodhentregable3",
+            "certificate_hash": "0a7aea8a090b4df49c10ab1862f9fb9e298cb10a"
+          }
+        },
+        {
+          "client_id": "187172587526-0iuc6h96jum4eo2s6odgtdtn635i16ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAszUeL0rlNoGvuFDkJ6CFvrEEwBzrC2hg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187172587526-0iuc6h96jum4eo2s6odgtdtn635i16ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
