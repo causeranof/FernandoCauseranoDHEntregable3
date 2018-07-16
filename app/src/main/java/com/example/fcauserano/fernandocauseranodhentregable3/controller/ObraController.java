@@ -1,8 +1,12 @@
-package com.example.fcauserano.fernandocauseranodhentregable3;
+package com.example.fcauserano.fernandocauseranodhentregable3.controller;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+
+import com.example.fcauserano.fernandocauseranodhentregable3.model.POJO.Obra;
+import com.example.fcauserano.fernandocauseranodhentregable3.model.DAO.ObraDAO;
+import com.example.fcauserano.fernandocauseranodhentregable3.utils.ResultListener;
 
 import java.util.ArrayList;
 import java.util.List;

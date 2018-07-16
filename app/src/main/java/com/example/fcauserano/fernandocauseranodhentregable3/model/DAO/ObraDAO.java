@@ -1,7 +1,9 @@
-package com.example.fcauserano.fernandocauseranodhentregable3.model;
+package com.example.fcauserano.fernandocauseranodhentregable3.model.DAO;
 
-import com.example.fcauserano.fernandocauseranodhentregable3.ObraService;
-import com.example.fcauserano.fernandocauseranodhentregable3.ResultListener;
+import com.example.fcauserano.fernandocauseranodhentregable3.model.POJO.Obra;
+import com.example.fcauserano.fernandocauseranodhentregable3.model.POJO.ObraService;
+import com.example.fcauserano.fernandocauseranodhentregable3.model.POJO.ObrasContainer;
+import com.example.fcauserano.fernandocauseranodhentregable3.utils.ResultListener;
 
 import java.util.ArrayList;
 import java.util.List;

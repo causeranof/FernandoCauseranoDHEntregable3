@@ -1,6 +1,4 @@
-package com.example.fcauserano.fernandocauseranodhentregable3.model;
-
-import com.example.fcauserano.fernandocauseranodhentregable3.model.ObrasContainer;
+package com.example.fcauserano.fernandocauseranodhentregable3.model.POJO;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
