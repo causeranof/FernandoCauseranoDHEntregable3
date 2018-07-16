@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.DetalleObraFragment">
+
+    <TextView
+        android:id="@+id/detalle_titulo_obra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        android:text="Titulo Obra"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/detalle_imagen_obra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detalle_titulo_obra"
+        android:src="@drawable/image_error" />
+
+    <TextView
+        android:id="@+id/detalle_titulo_artista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detalle_imagen_obra"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        android:text="@string/artista"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/detalle_nombre_artista_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detalle_titulo_artista"
+        android:layout_marginStart="10dp"
+        android:text="@string/nombre"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/detalle_nombre_artista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detalle_titulo_artista"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/detalle_nombre_artista_titulo"
+        android:text="Nombre Artista"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/detalle_nacionalidad_artista_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detalle_nombre_artista"
+        android:layout_marginStart="10dp"
+        android:text="@string/nacionalidad"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/detalle_nacionalidad_artista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detalle_nombre_artista"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/detalle_nacionalidad_artista_titulo"
+        android:text="Nacionalidad Artista"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/detalle_influenciado_artista_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detalle_nacionalidad_artista"
+        android:layout_marginStart="10dp"
+        android:text="@string/influencia"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/detalle_influenciado_artista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detalle_nacionalidad_artista"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/detalle_influenciado_artista_titulo"
+        android:text="Influencia"
+        android:textSize="20sp" />
+
+</RelativeLayout>

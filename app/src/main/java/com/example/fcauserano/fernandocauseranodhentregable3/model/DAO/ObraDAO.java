@@ -1,4 +1,7 @@
-package com.example.fcauserano.fernandocauseranodhentregable3;
+package com.example.fcauserano.fernandocauseranodhentregable3.model;
+
+import com.example.fcauserano.fernandocauseranodhentregable3.ObraService;
+import com.example.fcauserano.fernandocauseranodhentregable3.ResultListener;
 
 import java.util.ArrayList;
 import java.util.List;

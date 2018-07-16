@@ -1,6 +1,22 @@
 <resources>
-    <string name="app_name">FernandoCauseranoDHEntregable3</string>
+    <string name="app_name">FC Entregable III</string>
     <string name="facebook_app_id">228208327796187</string>
     <string name="fb_login_protocol_scheme">fb228208327796187</string>
+    <string name="text_welcome_login_page">Bienvenido al Museo Virtual de Arte Moderno</string>
+    <string name="usuario">email</string>
+    <string name="contraseña">contraseña</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="login">Ingresar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="artista">Artista</string>
+    <string name="nombre">Nombre: </string>
+    <string name="nacionalidad">Nacionalidad: </string>
+    <string name="influencia">Influenciado por: </string>
+    <string name="chat">Chat</string>
+    <string name="logout">Cerrar Sesion</string>
+    <string name="sala_chat">Sala de Chat</string>
+    <string name="mensaje">Escribir mensaje</string>
 
 </resources>

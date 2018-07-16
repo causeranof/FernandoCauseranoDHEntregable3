@@ -1,5 +1,6 @@
-package com.example.fcauserano.fernandocauseranodhentregable3;
+package com.example.fcauserano.fernandocauseranodhentregable3.model;
 
+import com.example.fcauserano.fernandocauseranodhentregable3.model.Obra;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;

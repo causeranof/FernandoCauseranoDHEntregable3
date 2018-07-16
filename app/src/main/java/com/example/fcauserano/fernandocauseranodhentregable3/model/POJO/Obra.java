@@ -1,4 +1,4 @@
-package com.example.fcauserano.fernandocauseranodhentregable3;
+package com.example.fcauserano.fernandocauseranodhentregable3.model;
 
 import java.io.Serializable;
 
