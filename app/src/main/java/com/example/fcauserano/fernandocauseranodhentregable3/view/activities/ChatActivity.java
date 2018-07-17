@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.fcauserano.fernandocauseranodhentregable3.R;
 import com.example.fcauserano.fernandocauseranodhentregable3.model.POJO.Mensaje;
@@ -28,6 +29,9 @@ public class ChatActivity extends AppCompatActivity {
     private EditText edtMensaje;
     private RecyclerView recyclerMensajes;
     private Button btnEnviar;
+    private TextView mensajeBienvenida;
+    private FirebaseUser user;
+    private Mensaje mensaje;
 
     private ChatAdapter chatAdapter;
 
@@ -38,10 +42,14 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-
+        mensaje = new Mensaje();
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        mensaje.setAutor(user.getEmail());
         edtMensaje = findViewById(R.id.txt_mensaje_chat);
         recyclerMensajes = findViewById(R.id.rv_mensajes);
         btnEnviar = findViewById(R.id.btn_enviar);
+        mensajeBienvenida = findViewById(R.id.mensaje_bienvenida);
+        mensajeBienvenida.setText("Bienvenido " + user.getEmail());
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("chat");
@@ -53,23 +61,22 @@ public class ChatActivity extends AppCompatActivity {
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy HH:mm");
                 String fecha = dateFormat.format(Calendar.getInstance().getTime());
-                Mensaje mensaje = new Mensaje();
                 mensaje.setMensaje(edtMensaje.getText().toString());
                 mensaje.setFecha(fecha);
-                mensaje.setAutor(user.getEmail());
                 databaseReference.push().setValue(mensaje);
                 edtMensaje.setText("");
+                recyclerMensajes.scrollToPosition(chatAdapter.getItemCount() - 1);
             }
         });
 
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Mensaje mensaje = dataSnapshot.getValue(Mensaje.class);
-                chatAdapter.agregarMensaje(mensaje);
+                Mensaje mensajeNuevo = dataSnapshot.getValue(Mensaje.class);
+                chatAdapter.agregarMensaje(mensajeNuevo);
+                recyclerMensajes.scrollToPosition(chatAdapter.getItemCount() - 1);
             }
 
             @Override
@@ -90,14 +97,6 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
-
-        chatAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
-            @Override
-            public void onItemRangeInserted(int positionStart, int itemCount) {
-                super.onItemRangeInserted(positionStart, itemCount);
-                recyclerMensajes.scrollToPosition(chatAdapter.getItemCount() - 1);
             }
         });
     }

@@ -25,9 +25,16 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="@string/sala_chat"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/mensaje_bienvenida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Bienvenido Usuario"/>
     <View
         android:paddingTop="5dp"
         android:layout_width="wrap_content"
