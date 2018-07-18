@@ -16,6 +16,26 @@ public class ObraRoomDaoUtil {
         this.database = AppDatabase.getDatabaseInstance(context);
     }
 
+    public void insertAllObras(List<Obra> obras){
+        InsertAllObrasAsync insertAllObrasAsync = new InsertAllObrasAsync(obras);
+        insertAllObrasAsync.execute();
+    }
+
+    public class InsertAllObrasAsync extends AsyncTask<Void, Void, Void>{
+
+        private List<Obra> obras;
+
+        public InsertAllObrasAsync(List<Obra> obras) {
+            this.obras = obras;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            database.obraRoomDAO().insertAllObras(obras);
+            return null;
+        }
+    }
+
     public void loadAllObras(ResultListener<List<Obra>> resultListener) {
         LoadAllObrasAsync loadAllObrasAsync = new LoadAllObrasAsync(resultListener);
         loadAllObrasAsync.execute();

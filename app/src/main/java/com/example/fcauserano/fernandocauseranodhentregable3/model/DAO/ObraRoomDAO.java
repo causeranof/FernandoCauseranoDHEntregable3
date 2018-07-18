@@ -17,11 +17,9 @@ public interface ObraRoomDAO {
     List<Obra> loadAllObras();
 
     @Insert(onConflict = IGNORE)
-    void insertObras(List<Obra> obras);
-
-    @Insert(onConflict = IGNORE)
-    void insertAllObras(Obra... obras);
+    void insertAllObras(List<Obra> obras);
 
     @Query("delete from obra")
     void deleteAllObras();
 }
+

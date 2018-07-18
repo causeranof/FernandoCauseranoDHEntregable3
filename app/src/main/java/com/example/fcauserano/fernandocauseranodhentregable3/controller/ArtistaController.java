@@ -6,8 +6,11 @@ import android.net.NetworkInfo;
 
 import com.example.fcauserano.fernandocauseranodhentregable3.model.DAO.AppDatabase;
 import com.example.fcauserano.fernandocauseranodhentregable3.model.DAO.ArtistaDAO;
+import com.example.fcauserano.fernandocauseranodhentregable3.model.DAO.ArtistaRoomDaoUtil;
 import com.example.fcauserano.fernandocauseranodhentregable3.model.POJO.Artista;
 import com.example.fcauserano.fernandocauseranodhentregable3.utils.ResultListener;
+
+import java.util.List;
 
 public class ArtistaController {
     private Context context;
@@ -28,7 +31,28 @@ public class ArtistaController {
                 }
             });
         } else {
+            ArtistaRoomDaoUtil artistaRoomDaoUtil = new ArtistaRoomDaoUtil(context);
+            artistaRoomDaoUtil.loadArtistaById(idArtista, new ResultListener<Artista>() {
+                @Override
+                public void finish(Artista result) {
+                    artistaResultListener.finish(result);
+                }
+            });
             artistaResultListener.finish(new Artista());
+        }
+    }
+    public void obtenerArtistas(final ResultListener<List<Artista>> resultListener){
+        if (hayInternet()){
+            ArtistaDAO artistaDAO = new ArtistaDAO();
+            artistaDAO.obtenerArtistas(new ResultListener<List<Artista>>() {
+                @Override
+                public void finish(List<Artista> result) {
+                    resultListener.finish(result);
+                    //ArtistaRoomDaoUtil artistaRoomDaoUtil = new ArtistaRoomDaoUtil(context);
+                    //artistaRoomDaoUtil.insertAllArtistas(result);
+                }
+            });
+
         }
     }
 

@@ -25,6 +25,8 @@ public class ObraController {
                 @Override
                 public void finish(List<Obra> listadoObras) {
                     resultListener.finish(listadoObras);
+                    //ObraRoomDaoUtil obraRoomDaoUtil = new ObraRoomDaoUtil(context);
+                    //obraRoomDaoUtil.insertAllObras(listadoObras);
                 }
             });
         } else {
@@ -35,7 +37,6 @@ public class ObraController {
                     resultListener.finish(result);
                 }
             });
-            //resultListener.finish(appDatabase.obraRoomDAO().loadAllObras());
         }
     }
 
