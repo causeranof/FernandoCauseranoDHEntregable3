@@ -28,6 +28,7 @@ public class ArtistaController {
                 @Override
                 public void finish(Artista artista) {
                     artistaResultListener.finish(artista);
+                    obtenerArtistas();
                 }
             });
         } else {
@@ -41,20 +42,21 @@ public class ArtistaController {
             artistaResultListener.finish(new Artista());
         }
     }
-    public void obtenerArtistas(final ResultListener<List<Artista>> resultListener){
-        if (hayInternet()){
+
+    //public void obtenerArtistas(final ResultListener<List<Artista>> resultListener){
+    public void obtenerArtistas() {
+        //if (hayInternet()) {
             ArtistaDAO artistaDAO = new ArtistaDAO();
             artistaDAO.obtenerArtistas(new ResultListener<List<Artista>>() {
                 @Override
                 public void finish(List<Artista> result) {
-                    //ArtistaRoomDaoUtil artistaRoomDaoUtil = new ArtistaRoomDaoUtil(context);
-                    //artistaRoomDaoUtil.insertAllArtistas(result);
-                    resultListener.finish(result);
-
+                    //resultListener.finish(result);
+                    ArtistaRoomDaoUtil artistaRoomDaoUtil = new ArtistaRoomDaoUtil(context);
+                    artistaRoomDaoUtil.insertAllArtistas(result);
                 }
             });
 
-        }
+        //}
     }
 
     public boolean hayInternet() {

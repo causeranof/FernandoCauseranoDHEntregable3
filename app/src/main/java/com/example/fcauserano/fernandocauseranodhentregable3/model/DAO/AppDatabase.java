@@ -13,7 +13,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
     private static AppDatabase INSTANCE_IN_MEMORY;
-    private static final String DATABASE = "Entregable3";
+    private static final String DATABASE = "database-entregable";
 
     public abstract ArtistaRoomDAO artistaRoomDAO();
     public abstract ObraRoomDAO obraRoomDAO();
@@ -21,7 +21,6 @@ public abstract class AppDatabase extends RoomDatabase {
     public static AppDatabase getDatabaseInstance(Context context) {
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, DATABASE)
-                    .allowMainThreadQueries()
                     .build();
         }
         return INSTANCE;

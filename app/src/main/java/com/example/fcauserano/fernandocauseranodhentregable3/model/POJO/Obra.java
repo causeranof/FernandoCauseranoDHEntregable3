@@ -8,14 +8,12 @@ import android.support.annotation.NonNull;
 
 import java.io.Serializable;
 
-@Entity(foreignKeys = {
-        @ForeignKey(entity = Artista.class,
-        parentColumns = "artistId",
-        childColumns = "artistId")})
+@Entity
 public class Obra implements Serializable {
 
     @PrimaryKey
     @NonNull
+    private Long obraId;
     private String name;
     private String image;
     private String artistId;
@@ -26,10 +24,11 @@ public class Obra implements Serializable {
     public Obra() {
     }
 
-    public Obra(@NonNull String name, String image, String artistId) {
+    public Obra(@NonNull Long obraId, String name, String image, String artistId) {
         this.name = name;
         this.image = image;
         this.artistId = artistId;
+        this.obraId = obraId;
     }
 
     public String getName() {
@@ -44,6 +43,11 @@ public class Obra implements Serializable {
     public Artista getArtista() {
         return artista;
     }
+    @NonNull
+    public Long getObraId() {
+        return obraId;
+    }
+
     public void setArtista(Artista artista) {
         this.artista = artista;
     }
@@ -56,4 +60,18 @@ public class Obra implements Serializable {
     public void setArtistId(String artistId) {
         this.artistId = artistId;
     }
+    public void setObraId(@NonNull Long obraId) {
+        this.obraId = obraId;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Obra)){
+            return false;
+        }
+        Obra obra = (Obra) obj;
+        //return (this.name.equals(obra.getName()));
+        return (this.name.equals(obra.getName()) && (this.artistId.equals(obra.getArtistId())));
+    }
+
 }
