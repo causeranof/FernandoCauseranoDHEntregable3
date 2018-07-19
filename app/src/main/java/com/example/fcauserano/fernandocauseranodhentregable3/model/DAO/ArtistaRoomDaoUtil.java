@@ -29,10 +29,10 @@ public class ArtistaRoomDaoUtil {
 
     }
 
-    public class insertAllArtistasAsync extends AsyncTask<Void, Void, Void>{
+    public class InsertAllArtistasAsync extends AsyncTask<Void, Void, Void>{
         private List<Artista> artistas;
 
-        public insertAllArtistasAsync(List<Artista> artistas) {
+        public InsertAllArtistasAsync(List<Artista> artistas) {
             this.artistas = artistas;
         }
 
@@ -59,7 +59,7 @@ public class ArtistaRoomDaoUtil {
 
         @Override
         protected void onPostExecute(Artista artista) {
-            super.onPostExecute(artista);
+            artistaResultListener.finish(artista);
         }
     }
 
@@ -76,7 +76,7 @@ public class ArtistaRoomDaoUtil {
 
         @Override
         protected void onPostExecute(List<Artista> artistas) {
-            super.onPostExecute(artistas);
+            artistaListener.finish(artistas);
         }
     }
 }
