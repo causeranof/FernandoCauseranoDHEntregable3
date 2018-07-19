@@ -24,8 +24,8 @@ public class ObraController {
             obraDAO.obtenerObras(new ResultListener<List<Obra>>() {
                 @Override
                 public void finish(List<Obra> listadoObras) {
-                    ObraRoomDaoUtil obraRoomDaoUtil = new ObraRoomDaoUtil(context);
-                    obraRoomDaoUtil.insertAllObras(listadoObras);
+                    //ObraRoomDaoUtil obraRoomDaoUtil = new ObraRoomDaoUtil(context);
+                    //obraRoomDaoUtil.insertAllObras(listadoObras);
                     resultListener.finish(listadoObras);
 
                 }

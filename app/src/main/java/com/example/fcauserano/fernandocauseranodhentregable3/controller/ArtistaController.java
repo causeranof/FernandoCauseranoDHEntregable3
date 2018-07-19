@@ -47,8 +47,8 @@ public class ArtistaController {
             artistaDAO.obtenerArtistas(new ResultListener<List<Artista>>() {
                 @Override
                 public void finish(List<Artista> result) {
-                    ArtistaRoomDaoUtil artistaRoomDaoUtil = new ArtistaRoomDaoUtil(context);
-                    artistaRoomDaoUtil.insertAllArtistas(result);
+                    //ArtistaRoomDaoUtil artistaRoomDaoUtil = new ArtistaRoomDaoUtil(context);
+                    //artistaRoomDaoUtil.insertAllArtistas(result);
                     resultListener.finish(result);
 
                 }

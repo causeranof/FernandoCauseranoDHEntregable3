@@ -26,6 +26,8 @@ public class ArtistaRoomDaoUtil {
         loadArtistaByIdAsync.execute();
     }
     public void insertAllArtistas(List<Artista> artistas){
+        InsertAllArtistasAsync insertAllArtistasAsync = new InsertAllArtistasAsync(artistas);
+        insertAllArtistasAsync.execute();
 
     }
 
